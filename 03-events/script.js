@@ -58,3 +58,11 @@ createListOfNumber();
 Actions[0].addEventListener("click", () => createListOfNumber("sort"));
 Actions[1].addEventListener("click", () => createListOfNumber("odd"));
 Actions[2].addEventListener("click", () => createListOfNumber("even"));
+
+Actions.forEach((btn) => {
+  btn.addEventListener("click", (event) => {
+    console.log(event.currentTarget);
+    Actions.forEach((btn) => btn.classList.remove("active"));
+    event.currentTarget.classList.add("active");
+  });
+});
