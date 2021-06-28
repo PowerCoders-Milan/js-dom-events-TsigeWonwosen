@@ -1,0 +1,16 @@
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn {
+  padding: .5em 1em;
+  border-radius: 4px;
+  background-color: lightblue;
+  text-decoration: none;
+  color:  white;
+}
+
+.active {
+  color: blue;
+}
