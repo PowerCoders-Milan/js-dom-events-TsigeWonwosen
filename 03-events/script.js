@@ -56,5 +56,5 @@ function createListOfNumber(type) {
 const Actions = document.querySelectorAll(".actions .btn");
 createListOfNumber();
 Actions[0].addEventListener("click", () => createListOfNumber("sort"));
-Actions[1].addEventListener("click", () => createListOfNumber("even"));
-Actions[2].addEventListener("click", () => createListOfNumber("odd"));
+Actions[1].addEventListener("click", () => createListOfNumber("odd"));
+Actions[2].addEventListener("click", () => createListOfNumber("even"));
