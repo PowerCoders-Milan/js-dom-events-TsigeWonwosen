@@ -10,7 +10,7 @@ thElements.forEach((element) => {
 //       Make the function teamCount() return it
 const teamCount = () => {
   // TODO: return the number of teams
-  const trElements = document.querySelectorAll("tr");
+  const trElements = document.querySelectorAll("tbody tr");
   return trElements.length;
 };
 
