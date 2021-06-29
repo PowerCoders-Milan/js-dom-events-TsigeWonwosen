@@ -2,19 +2,27 @@
 
 function generateRandomNumber(number) {
   const randomNumberArray = [];
-
   let i = 1;
 
   while (i <= number) {
-    let randomNumbers = Math.floor(Math.random() * 100);
+    let randomNumbers = Math.floor(Math.random() * 200);
     randomNumberArray.push(randomNumbers);
     i++;
   }
   return randomNumberArray;
 }
 
-// console.log(generateRandomNumber(20));
+console.log(generateRandomNumber(20));
 // 2. show those numbers inside the page element.insertAdjentHTML
+
+const writeList = (listElement, ListArray) => {
+  // delete prevoius numbers list
+  listElement.innerHTML = "";
+  // insert new numbers in list
+  ListArray.forEach((element) => {
+    listElement.insertAdjacentHTML("beforeend", `<li>${element}</li>`);
+  });
+};
 
 function createListOfNumber(type) {
   let ListArray = generateRandomNumber(20);
@@ -28,23 +36,9 @@ function createListOfNumber(type) {
     console.log("Not Selected");
   }
 
-  const writeList = (listElement) => {
-    // delete prevoius numbers list
-    listElement.innerHTML = "";
-    // insert new numbers in list
-    ListArray.forEach((element) => {
-      listElement.insertAdjacentHTML("beforeend", `<li>${element}</li>`);
-    });
-  };
-
-  // let List = "";
-  // ListArray.forEach((list) => (List += `<li> ${list} </li>`));
-
   const numbersList = document.querySelector(".random-numbers ul");
 
-  // numbersList.insertAdjacentHTML("beforeEnd", List);
-
-  writeList(numbersList);
+  writeList(numbersList, ListArray);
 }
 // numbersList.forEach(() => {}); // complete this iterator to do the task
 
@@ -61,7 +55,6 @@ Actions[2].addEventListener("click", () => createListOfNumber("even"));
 
 Actions.forEach((btn) => {
   btn.addEventListener("click", (event) => {
-    console.log(event.currentTarget);
     Actions.forEach((btn) => btn.classList.remove("active"));
     event.currentTarget.classList.add("active");
   });
